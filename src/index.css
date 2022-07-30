@@ -39,7 +39,6 @@ header .title {
 }
 
 .container .words span {
-  background-color: green;
   padding: 3px;
   margin: 1px;
   border-radius: 5px;
@@ -49,4 +48,16 @@ header .title {
   width: 60%;
   padding: 5px;
   margin: 5px;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+.next {
+  background-color: grey;
 }
