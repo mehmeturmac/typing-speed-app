@@ -4,3 +4,49 @@ body {
   box-sizing: border-box;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.App {
+  background-color: #a1a1a1;
+  max-width: 1100px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header .title {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.container .words {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.container .words span {
+  background-color: green;
+  padding: 3px;
+  margin: 1px;
+  border-radius: 5px;
+}
+
+.container .input {
+  width: 60%;
+  padding: 5px;
+  margin: 5px;
+}
