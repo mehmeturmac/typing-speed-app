@@ -6,16 +6,30 @@ const wordCount = 30;
 
 const getWords = (arr, num) => {
   const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, num);
+  const newWords = shuffled.slice(0, num);
+  return newWords.map((word) => ({ ...word, status: '' }));
 };
 
 export const wordSlice = createSlice({
   name: 'words',
   initialState: {
     items: getWords(wordsjson.words, wordCount),
+    keyCount: 0,
+    timer: 25,
   },
-  reducers: {},
+  reducers: {
+    keyCounter: (state) => {
+      state.keyCount += 1;
+    },
+    setStatus: (state, action) => {
+      const item = state.items.find((item) => item.id === action.payload.id);
+      item.status = action.payload.status;
+    },
+    tick: (state) => {
+      state.timer -= 1;
+    },
+  },
 });
 
-export const { addword } = wordSlice.actions;
+export const { keyCounter, setStatus, tick } = wordSlice.actions;
 export default wordSlice.reducer;
