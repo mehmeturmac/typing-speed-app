@@ -1386,19 +1386,9 @@
       "english": "those"
     },
     {
-      "id": 290,
-      "turkish": "her ikisi de",
-      "english": "both"
-    },
-    {
       "id": 291,
       "turkish": "işareti",
       "english": "mark"
-    },
-    {
-      "id": 292,
-      "turkish": "sık sık",
-      "english": "often"
     },
     {
       "id": 293,
@@ -2929,11 +2919,6 @@
       "id": 609,
       "turkish": "ölmek",
       "english": "die"
-    },
-    {
-      "id": 610,
-      "turkish": "en az",
-      "english": "least"
     },
     {
       "id": 611,
