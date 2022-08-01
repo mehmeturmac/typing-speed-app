@@ -10,6 +10,7 @@ function Container() {
   const words = useSelector((state) => state.words.items);
   const keyCount = useSelector((state) => state.words.keyCount);
   const timer = useSelector((state) => state.words.timer);
+  const lang = useSelector((state) => state.words.lang);
 
   const dispatch = useDispatch();
 
@@ -22,12 +23,15 @@ function Container() {
     dispatch(keyCounter());
     dispatch(setStatus({ id: words[index].id, status: 'next' }));
 
+    let word = words[index].turkish;
+    if (lang === 'english') word = words[index].english;
+
     if (e.target.value.includes(' ')) {
       setInput('');
       setIndex(index + 1);
-      if (words[index].turkish.includes(input) && words[index].turkish.length === input.length) {
+      if (word.includes(input) && word.length === input.length) {
         dispatch(setStatus({ id: words[index].id, status: 'correct' }));
-      } else if (!words[index].turkish.includes(input) || words[index].turkish.length !== input.length) {
+      } else if (!word.includes(input) || word.length !== input.length) {
         dispatch(setStatus({ id: words[index].id, status: 'incorrect' }));
       }
     } else setInput(e.target.value);
@@ -40,7 +44,7 @@ function Container() {
       <div className="words">
         {words.map((word) => (
           <span className={word.status} key={word.id}>
-            {word.turkish}
+            {lang === 'turkish' ? word.turkish : word.english}
           </span>
         ))}
       </div>

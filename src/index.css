@@ -16,9 +16,21 @@ body {
 }
 
 /* Header */
+header {
+  position: relative;
+  width: 80%;
+  padding: 10px;
+}
+
 header .title {
   text-align: center;
   font-size: 2.5rem;
+}
+
+header #lang {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
 }
 
 /* Container */

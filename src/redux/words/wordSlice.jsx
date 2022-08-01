@@ -15,7 +15,8 @@ export const wordSlice = createSlice({
   initialState: {
     items: getWords(wordsjson.words, wordCount),
     keyCount: 0,
-    timer: 25,
+    timer: 60,
+    lang: 'turkish',
   },
   reducers: {
     keyCounter: (state) => {
@@ -28,8 +29,11 @@ export const wordSlice = createSlice({
     tick: (state) => {
       state.timer -= 1;
     },
+    setLang: (state, action) => {
+      state.lang = action.payload;
+    },
   },
 });
 
-export const { keyCounter, setStatus, tick } = wordSlice.actions;
+export const { keyCounter, setStatus, tick, setLang } = wordSlice.actions;
 export default wordSlice.reducer;
