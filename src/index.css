@@ -80,10 +80,12 @@ header #lang {
 
 .correct {
   color: green;
+  text-shadow: green 0px 0px 1px;
 }
 
 .incorrect {
   color: red;
+  text-shadow: red 0px 0px 1px;
 }
 
 .next {
@@ -117,6 +119,7 @@ header #lang {
   margin: 5px auto;
   padding: 5px 15px;
   border: 1px solid black;
+  font-size: 1.2rem;
 }
 
 /* Footer */
